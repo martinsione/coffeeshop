@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  min-width: 360px;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white;
+  @apply dark:bg-black;
+  @apply text-black;
+  @apply dark:text-white;
+
+  /* Transitions */
+  @apply transition;
+  @apply duration-200;
+}
+a,
+button {
+  @apply hover:text-gray-700;
+  @apply dark:hover:text-gray-300;
+}
+
+::selection {
+  background-color: #47a3f3;
+  color: #fefefe;
+}
