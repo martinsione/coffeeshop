@@ -13,8 +13,8 @@ export default function Navbar() {
       </a>
       <div className="text-lg flex items-center">
         <ul className="flex">
-          {NAV_ITEMS.map((item) => (
-            <a href={item.href}>
+          {NAV_ITEMS.map((item, key) => (
+            <a href={item.href} key={key}>
               <li className=" hover:text-gray-700 dark:hover:text-gray-300 mr-4 p-1">
                 {item.name}
               </li>
