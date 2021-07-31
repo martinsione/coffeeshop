@@ -17,6 +17,7 @@ body {
   @apply transition;
   @apply duration-200;
 }
+
 a,
 button {
   @apply hover:text-gray-700;
