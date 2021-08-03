@@ -4,7 +4,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 flex justify-between lg:justify-around border-b bg-white dark:bg-black  dark:border-gray-800 p-3">
+    <nav className="sticky top-0 flex justify-between p-4 md:my-5  bg-white dark:bg-black">
       <div className="flex">
         <span className="mr-4">
           <ThemeSwitcher />
