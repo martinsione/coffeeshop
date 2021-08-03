@@ -4,7 +4,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 flex justify-between p-4 md:my-5  bg-white dark:bg-black">
+    <nav className="sticky top-0 flex justify-between p-4 md:my-5 bg-white dark:bg-black">
       <div className="flex">
         <span className="mr-4">
           <ThemeSwitcher />
@@ -17,10 +17,10 @@ export default function Navbar() {
           />
         </a>
       </div>
-      <div className="text-lg flex items-center">
+      <div className="text-lg flex items-center ">
         {NAV_ITEMS.map((item, key) => (
           <a href={item.href} key={key} className="mr-4 p-1">
-            <p>{item.name}</p>
+            {item.name}
           </a>
         ))}
         <CartWidget />

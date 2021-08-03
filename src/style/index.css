@@ -16,20 +16,17 @@ body {
   @apply dark:bg-black;
   @apply text-black;
   @apply dark:text-white;
-
-  /* Transitions */
-  @apply transition;
-  @apply duration-200;
 }
 
 p {
   @apply text-gray-800;
   @apply dark:text-gray-200;
 }
+
 a,
 button {
-  @apply hover:text-gray-700;
-  @apply dark:hover:text-gray-300;
+  @apply hover:text-opacity-90;
+  @apply dark:hover:text-opacity-90;
 }
 
 ::selection {
