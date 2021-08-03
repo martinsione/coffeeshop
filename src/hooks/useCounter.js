@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-export default function useCounter(stock, initial, onAdd) {
-  const [count, setCount] = useState(initial || 1);
+export default function useCounter(initialValue, stock) {
+  const value = stock < 1 ? 0 : Math.abs(parseInt(initialValue)) || 1;
+  const [count, setCount] = useState(value);
 
   const increment = () => {
-    if (count < stock) {
+    if (count < parseInt(stock)) {
       setCount(count + 1);
     }
   };
