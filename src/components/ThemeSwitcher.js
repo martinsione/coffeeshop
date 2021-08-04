@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
+import useColorTheme from "../hooks/useColorTheme";
 import SVG from "./SVG";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState(localStorage.theme);
-  const colorTheme = theme === "dark" ? "light" : "dark";
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove(colorTheme);
-    root.classList.add(theme);
-    localStorage.setItem("theme", theme);
-  }, [theme, colorTheme]);
+  const { theme, switchTheme } = useColorTheme();
 
   return (
     <button
       className="bg-gray-200 dark:bg-gray-800 flex items-center justify-center rounded h-10 w-10"
-      onClick={() => setTheme(colorTheme)}
+      onClick={switchTheme}
     >
       <SVG
         className=" w-4 h-4 text-gray-800 dark:text-gray-200"
