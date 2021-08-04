@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function useCounter(initialValue, stock) {
-  const value = stock < 1 ? 0 : Math.abs(parseInt(initialValue)) || 1;
+  const value = stock < 1 ? 0 : parseInt(initialValue) || 1;
   const [count, setCount] = useState(value);
 
   const increment = () => {

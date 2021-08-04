@@ -29,7 +29,7 @@ export default function ItemCount({ initialValue, stock, title, onAdd }) {
       </div>
       <button
         disabled={stock < 1}
-        className="p-2 rounded border text-gray-100  bg-blue-500 dark:bg-indigo-900 disabled:opacity-50 disabled:text-white dark:disabled:text-white"
+        className="p-2 rounded border text-gray-100  bg-blue-500 dark:bg-indigo-600 disabled:opacity-50 disabled:text-white dark:disabled:text-white"
       >
         {stock < 1 ? "Sold out" : "Add to cart"}
       </button>
