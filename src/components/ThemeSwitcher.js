@@ -13,7 +13,7 @@ export default function ThemeSwitcher() {
   }, [theme, colorTheme]);
 
   return (
-    <div
+    <button
       className="bg-gray-200 dark:bg-gray-800 flex items-center justify-center rounded h-10 w-10"
       onClick={() => setTheme(colorTheme)}
     >
@@ -25,6 +25,6 @@ export default function ThemeSwitcher() {
             : "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646"
         }
       />
-    </div>
+    </button>
   );
 }
