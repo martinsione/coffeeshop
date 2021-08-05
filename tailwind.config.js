@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       opacity: ["disabled"],
       textColor: ["disabled"],
+      invert: ["dark", "hover"],
     },
   },
   plugins: [],

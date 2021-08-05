@@ -18,11 +18,6 @@ body {
   @apply dark:text-white;
 }
 
-p {
-  @apply text-gray-800;
-  @apply dark:text-gray-200;
-}
-
 a,
 button {
   @apply hover:text-opacity-90;
