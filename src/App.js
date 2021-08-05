@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
+// import ItemListContainer from "./components/ItemListContainer";
 import ItemList from "./components/ItemList";
 import { items } from "./mocks/items";
 
