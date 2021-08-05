@@ -1,17 +1,19 @@
 import useCounter from "../hooks/useCounter";
 import SVG from "./SVG";
 
-export default function ItemCount({ initialValue, stock, title, onAdd }) {
+export default function ItemCount({
+  initialValue = 1,
+  stock,
+  title,
+  onAdd = () => {},
+}) {
   const { count, increment, decrement } = useCounter(initialValue, stock);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`${count} items added`);
-  };
+  const handleAdd = () => count > 0 && onAdd(count);
 
   return (
-    <form className="my-1 flex flex-col max-w-xs" onSubmit={handleSubmit}>
-      <div className="my-1 px-4 py-2 rounded border bg-gray-100 dark:bg-gray-800">
+    <div className="flex flex-col max-w-xs">
+      <div className="my-1 p-2 rounded border bg-gray-100 dark:bg-gray-800">
         <p className="text-center text-gray-700 dark:text-gray-300">{title}</p>
         <div className="my-2 p-2 flex rounded border bg-white dark:bg-gray-900">
           <button onClick={decrement} type="button">
@@ -28,11 +30,12 @@ export default function ItemCount({ initialValue, stock, title, onAdd }) {
         </div>
       </div>
       <button
-        disabled={stock < 1}
+        disabled={stock < 1 || count < 1}
         className="p-2 rounded border text-gray-100  bg-blue-500 dark:bg-indigo-600 disabled:opacity-50 disabled:text-white dark:disabled:text-white"
+        onClick={handleAdd}
       >
         {stock < 1 ? "Sold out" : "Add to cart"}
       </button>
-    </form>
+    </div>
   );
 }

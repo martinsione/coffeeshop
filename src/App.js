@@ -9,7 +9,12 @@ export default function App() {
       <Navbar />
       <div className="max-w-4xl mx-auto px-4">
         <ItemListContainer greeting="Este mensaje viene de ItemListContainer" />
-        <ItemCount initial={1} stock={5} title="Title" />
+        <ItemCount
+          initialValue={1}
+          stock={5}
+          title="Title"
+          onAdd={(count) => console.log(`${count} items added`)}
+        />
       </div>
       <span className="p-4 md:px-20 w-full max-w-6xl fixed bottom-0 flex justify-end">
         <ThemeSwitcher />
