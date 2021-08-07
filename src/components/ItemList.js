@@ -2,7 +2,7 @@ import Item from "./Item";
 
 export default function ItemList({ items }) {
   return (
-    <div className="flex flex-wrap justify-center">
+    <>
       {items.map((item) => (
         <Item
           key={item.id}
@@ -12,6 +12,6 @@ export default function ItemList({ items }) {
           pictureUrl={item.pictureUrl}
         />
       ))}
-    </div>
+    </>
   );
 }
