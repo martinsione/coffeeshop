@@ -12,10 +12,10 @@ export default function App() {
       <Navbar />
       <div className="max-w-6xl mx-auto px-4">
         <ItemListContainer>
-          {items !== null ? (
-            <ItemList items={items} />
-          ) : (
+          {items === "loading" ? (
             <div className="loading-spinner"></div>
+          ) : (
+            <ItemList items={items} />
           )}
         </ItemListContainer>
       </div>

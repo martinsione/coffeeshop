@@ -9,7 +9,7 @@ function fetchData(data) {
 }
 
 export default function useFetchItems(data) {
-  const [items, setItems] = useState(null);
+  const [items, setItems] = useState("loading");
 
   useEffect(() => {
     fetchData(data)
