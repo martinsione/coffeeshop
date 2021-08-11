@@ -3,7 +3,7 @@ export default function Item({ id, title, description, price, pictureUrl }) {
 
   return (
     <div key={id} className="px-2 py-5 w-full max-w-sm md:w-1/2 lg:w-1/3">
-      <div className="overflow-hidden rounded hover:shadow-lg border dark:border-gray-800 dark:hover:border-gray-400 flex flex-col">
+      <div className="flex flex-col rounded overflow-hidden border hover:shadow-lg dark:hover:border-gray-600">
         <img src={pictureUrl} alt={description} />
         <p className="mt-2 font-bold text-2xl text-center text-gray-800 dark:text-gray-300">
           {title}

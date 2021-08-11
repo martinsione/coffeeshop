@@ -5,7 +5,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 flex justify-between p-4 md:my-5 bg-white dark:bg-black">
-      <div className="flex">
+      <div className="flex justify-center items-center">
         <a href="/">
           <img
             className="w-10 mr-8"
@@ -13,7 +13,7 @@ export default function Navbar() {
             alt="logo de coffeeshop"
           />
         </a>
-        <div className="text-lg flex items-center ">
+        <div className="text-lg">
           {NAV_ITEMS.map((item, key) => (
             <a href={item.href} key={key} className="mr-4 p-1">
               {item.name}
@@ -21,11 +21,9 @@ export default function Navbar() {
           ))}
         </div>
       </div>
-      <div className="flex ">
-        <span className="mr-4 md:mr-8 flex">
-          <CartWidget />
-        </span>
-        <ThemeSwitcher margin={9} />
+      <div className="flex justify-center items-center">
+        <CartWidget />
+        <ThemeSwitcher className="ml-4 md:ml-8" />
       </div>
     </nav>
   );
