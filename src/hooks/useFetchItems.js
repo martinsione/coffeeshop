@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import fetchData from "../mocks/fetchData"
+import fetchData from "../mocks/fetchData";
 
 export default function useFetchItems(data) {
   const [items, setItems] = useState("loading");
@@ -10,7 +10,5 @@ export default function useFetchItems(data) {
       .catch((err) => console.error(err));
   }, [data]);
 
-  return {
-    items,
-  };
+  return items;
 }
