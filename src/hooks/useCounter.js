@@ -1,11 +1,8 @@
 import { useState } from "react";
 
 export default function useCounter(initialValue, stock) {
-  if (typeof initialValue !== "number" || typeof stock !== "number") {
-    throw new Error(
-      "Both initialValue and stock properties should be type number"
-    );
-  }
+  initialValue = parseInt(initialValue);
+  stock = parseInt(stock);
 
   const value = stock < 1 ? 0 : initialValue;
   const [count, setCount] = useState(value);
