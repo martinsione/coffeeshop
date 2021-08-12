@@ -12,7 +12,7 @@ export default function ItemCount({
   const handleAdd = () => count > 0 && onAdd(count);
 
   return (
-    <div className="flex flex-col max-w-xs">
+    <div className="flex flex-col min-w-0">
       <div className="my-1 p-2 rounded border bg-gray-100 dark:bg-gray-800">
         <p className="text-center text-gray-700 dark:text-gray-300">{title}</p>
         <div className="my-2 p-2 flex rounded border bg-white dark:bg-gray-900">

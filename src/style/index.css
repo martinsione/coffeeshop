@@ -52,9 +52,8 @@ input[type="number"] {
 
   /* Centering the spinner */
   position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  top: 50%;
+  left: 50%;
 }
 
 @keyframes spin {

@@ -4,83 +4,95 @@
     "title": "Berry red",
     "description": "Red tea, Phu Erh with cranberry, pieces of strawberry, rosehip peel and notes of passion fruit. Pack 60 GRS",
     "price": 630,
-    "pictureUrl": "/images/coffee/BERRY-RED-600x400.jpg"
+    "pictureUrl": "/images/coffee/BERRY-RED-600x400.jpg",
+    "stock": 15
   },
   {
     "id": "e9ef029c-3be4-4c53-ab7e-50f5f51df4bf",
     "title": "Black Chai Cocoa",
     "description": "Blend based on black tea leaves with cocoa husks, cinnamon, cardadomo, scent key and vanilla. Pack 60 GRS",
     "price": 630,
-    "pictureUrl": "/images/coffee/BLACK-CHAI-COCOA-600x400.jpg"
+    "pictureUrl": "/images/coffee/BLACK-CHAI-COCOA-600x400.jpg",
+    "stock": 3
   },
   {
     "id": "5f402d7b-4a66-4705-a1e2-d24b5211dc62",
     "title": "Black Orange",
     "description": "Black tea with orange peel, pieces of cinnamon stick and sweet notes of honey and orange. Pack 60 GRS",
     "price": 630,
-    "pictureUrl": "/images/coffee/BLACK-ORANGE-600x400.jpg"
+    "pictureUrl": "/images/coffee/BLACK-ORANGE-600x400.jpg",
+    "stock": 9
   },
   {
     "id": "53d3fb2a-f3b4-4fa0-907f-77a7327a5501",
     "title": "Black Original",
     "description": "It is a mixture of black tea leaves of different origins such as Ceylan and Assam tea. Pack 60 GRS",
     "price": 630,
-    "pictureUrl": "/images/coffee/BLACK-ORIGINAL-600x400.jpg"
+    "pictureUrl": "/images/coffee/BLACK-ORIGINAL-600x400.jpg",
+    "stock": 6
   },
   {
     "id": "31a50ed8-05a7-4157-815d-664305e40b76",
     "title": "Brazil Medium Roast",
     "description": "An outstanding coffee adapted from varieties exclusively of the Arabian species, which grows in the high mountains of the Colombian Andes in ideal temperature ranges throughout the year, which generate characteristics and attributes exceptionally valued by the most sophisticated consumers. It is an artisan coffee, processed through the wet mill, which contains hours of effort and dedication from thousands of proud producers to produce an exceptional drink. 100% arabic beans Intensity: Mild A very sweet coffee, with a hint of citrus and floral flavor. Lively acidity, a silky body and a complexity of floral notes in the aroma. Our Brasil Santos Bourbon with a more intense roast that enhances its qualities. Pack 250 gr",
     "price": 1000,
-    "pictureUrl": "/images/coffee/BRASIL-MEDIUM-ROAST-600x400.jpg"
+    "pictureUrl": "/images/coffee/BRASIL-MEDIUM-ROAST-600x400.jpg",
+    "stock": 2
   },
   {
     "id": "7bf8bda7-3a99-486e-a5e0-7fd82478225d",
     "title": "Brazil Santos Bourbon",
     "description": "This coffee from Brazil, one of the most important in this country, is made with the best beans. Dried in the sun, it has the body and weight of coffees with its own character. Grown in the north of Minas Gerais or in the state of Sao Paulo. It is commonly called Santos since this high quality product is shipped to different parts of the world to a greater extent by the port of Santos. The Brazilian plants are descendants of those brought from the island of La Reunion, formerly Bourbón (hence its name), located in the Indian Ocean. Blend of 100% Arabica beans from Santos Bourbon in different stages, cycles. The result is a finer and more balanced coffee. Intensity: Smooth Sophisticated selection of beans that make up a smooth and creamy blend with a slightly sweet aftertaste. Pack 250 gr",
     "price": 1000,
-    "pictureUrl": "/images/coffee/BRASIL-SANTOS-BOURBON-600x400.jpg"
+    "pictureUrl": "/images/coffee/BRASIL-SANTOS-BOURBON-600x400.jpg",
+    "stock": 0
   },
   {
     "id": "6a4a2464-737b-4b7d-bbbf-3236f69b861b",
     "title": "Chocolate",
     "description": "Made with 100% Arabic grain and natural extracts up to 3%. These extracts are added during the roasting process, allowing a subtle flavor to slip through without dulling the strength of the coffee. Blend of 100% arabic grains. Pack 250 gr",
     "price": 1050,
-    "pictureUrl": "/images/coffee/CHOCOLATE-600x400.jpg"
+    "pictureUrl": "/images/coffee/CHOCOLATE-600x400.jpg",
+    "stock": 19
   },
   {
     "id": "846268e2-1dc9-45f2-bbfc-de0118725820",
     "title": "Coffee Passion",
     "description": "This varietal has a genuine flavor and arises from a continuously evolving process that combines select raw materials, research and development. The roast profile was created specifically for this Ethiopian Yirgachaffe highlighting its organoleptic notes to combine with harmony and personality. Blend of 100% arabic grains. Intensity: Strong. A very sweet coffee, with a hint of citrus and floral flavor. Lively acidity, a silky body and a complexity of floral notes in the aroma, sometimes with a hint of toasted coconut. The aftertaste is vibrant and the coffee can have berry or wine undertones. Ethiopian Yirgacheffes are spicy and strong. In its aroma, wood and pepper predominate with a tiled hint as it loses heat. Pack 250 gr",
     "price": 1000,
-    "pictureUrl": "/images/coffee/COFFEE-PASSION-600x400.jpg"
+    "pictureUrl": "/images/coffee/COFFEE-PASSION-600x400.jpg",
+    "stock": 2
   },
   {
     "id": "1ea60fc7-57ec-4925-874f-36f306f90c79",
     "title": "Colombian Dark",
     "description": "An outstanding coffee adapted from varieties exclusively of the Arabian species, which grows in the high mountains of the Colombian Andes in ideal temperature ranges throughout the year, which generate characteristics and attributes exceptionally valued by the most sophisticated consumers. It is an artisan coffee, processed through the wet mill, which contains hours of effort and dedication from thousands of proud producers to produce an exceptional drink. 100% arabic beans. Intensity: Mild. A very sweet coffee, with a hint of citrus and floral flavor. Lively acidity, a silky body and a complexity of floral notes in the aroma. Our Colombian Supremo subjected to the maximum roast intensifying aroma, flavor and reducing acidity. Pack 250 gr",
     "price": 1000,
-    "pictureUrl": "/images/coffee/COLOMBIAN-DARK-600x400.jpg"
+    "pictureUrl": "/images/coffee/COLOMBIAN-DARK-600x400.jpg",
+    "stock": 8
   },
   {
     "id": "a334ff94-5e53-4ad1-9d9d-6d0dce8575a5",
     "title": "Colombian Decaff",
     "description": "A decaffeinated coffee is one from which the caffeine has been removed to a content of less than 0.1% for roasting. Caffeine is the most physiologically active compound in coffee and the main responsible for making us wake up and give us energy to work. However, some people are especially sensitive to this natural substance, so decaffeinated coffee is a good alternative so that they can enjoy the drink without the stimulating effects. Treated to remove caffeine, allowing the coffee to preserve its aroma and flavor. Pack 250 gr",
     "price": 1000,
-    "pictureUrl": "/images/coffee/COLOMBIAN-DECAFF-1-600x400.jpg"
+    "pictureUrl": "/images/coffee/COLOMBIAN-DECAFF-1-600x400.jpg",
+    "stock": 1
   },
   {
     "id": "5e73e554-a36f-4752-ba65-9b8bb7f3739a",
     "title": "Supreme Colombian",
     "description": "An outstanding coffee adapted from varieties exclusively of the Arabian species, which grows in the high mountains of the Colombian Andes in ideal temperature ranges throughout the year, which generate characteristics and attributes exceptionally valued by the most sophisticated consumers. It is an artisan coffee, processed through the wet mill, which contains hours of effort and dedication from thousands of proud producers to produce an exceptional drink. 100% arabic beans. Intensity: Mild. A very sweet coffee, with a hint of citrus and floral flavor. Lively acidity, a silky body and a complexity of floral notes in the aroma. A sweet coffee, with a hint of citrus and floral flavor, lively acidity and silky body. Pack 250 gr",
     "price": 1000,
-    "pictureUrl": "/images/coffee/COLOMBIAN-SUPREMO-600x400.jpg"
+    "pictureUrl": "/images/coffee/COLOMBIAN-SUPREMO-600x400.jpg",
+    "stock": 3
   },
   {
     "id": "03370903-9b6f-4c90-9ff3-6ff83325e568",
     "title": "congo",
     "description": "Kawa Maber means \"good coffee\" in the local language, and the production of good coffee is the primary ambition of this motivated group of farmers. For decades, coffee from this region was smuggled across the border into Uganda to be sold as Wugar and Bugisu, or sold to local pickers at low prices. Washed coffee had not been officially exported across the Mahagi / Goli border in more than 20 years until the purchase of Kawa Maber by Atlas in 2015. With the growing interest from coffee buyers and international aid organizations, there is a new motivation for producers to revitalize the coffee sector in eastern Congo During Atlas's first visit to North Kivu, Elegant and bright acidity of blueberry, cane sugar and plum notes with a syrupy body and good balance. Pack 250 gr",
     "price": 1300,
-    "pictureUrl": "/images/coffee/CONGO-600x400.jpg"
+    "pictureUrl": "/images/coffee/CONGO-600x400.jpg",
+    "stock": 12
   }
 ]
