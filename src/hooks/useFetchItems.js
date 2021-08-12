@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-
-function fetchData(data) {
-  return new Promise((res, rej) => {
-    setTimeout(() => {
-      res(data);
-    }, 2000);
-  });
-}
+import fetchData from "../mocks/fetchData"
 
 export default function useFetchItems(data) {
   const [items, setItems] = useState("loading");
