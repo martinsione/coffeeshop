@@ -1,5 +1,5 @@
 import useCounter from "../hooks/useCounter";
-import SVG from "./SVG";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 export default function ItemCount({
   initialValue = 1,
@@ -16,16 +16,16 @@ export default function ItemCount({
       <div className="my-1 p-2 rounded border bg-gray-100 dark:bg-gray-800">
         <p className="text-center text-gray-700 dark:text-gray-300">{title}</p>
         <div className="my-2 p-2 flex rounded border bg-white dark:bg-gray-900">
-          <button onClick={decrement} type="button">
-            <SVG className="w-6 h-6" path="M18 12H6" />
+          <button className="text-xl" onClick={decrement} type="button">
+            <AiOutlineMinus />
           </button>
           <input
             className="w-full text-center font-semibold dark:bg-gray-900 focus:outline-none"
             readOnly
             value={count}
           />
-          <button onClick={increment} type="button">
-            <SVG className="w-6 h-6" path="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          <button className="text-xl" onClick={increment} type="button">
+            <AiOutlinePlus />
           </button>
         </div>
       </div>

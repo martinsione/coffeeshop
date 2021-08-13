@@ -1,8 +1,11 @@
 import { NAV_ITEMS } from "../constants/links";
 import CartWidget from "./CartWidget";
-import ThemeSwitcher from "./ThemeSwitcher";
+
+import useColorTheme from "../hooks/useColorTheme";
+import { IoSunny, IoMoon } from "react-icons/io5";
 
 export default function Navbar() {
+  const { theme, switchTheme } = useColorTheme();
   return (
     <nav className="sticky top-0 flex justify-between p-4 md:my-5 bg-white dark:bg-black">
       <div className="flex justify-center items-center">
@@ -23,7 +26,12 @@ export default function Navbar() {
       </div>
       <div className="flex justify-center items-center">
         <CartWidget />
-        <ThemeSwitcher className="ml-4 md:ml-8" />
+        <button
+          className="rounded text bg-gray-200 dark:bg-gray-800 p-3 ml-4"
+          onClick={switchTheme}
+        >
+          {theme === "dark" ? <IoSunny /> : <IoMoon />}
+        </button>
       </div>
     </nav>
   );
