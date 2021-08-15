@@ -1,19 +1,24 @@
 import { useState } from "react";
 import ItemCount from "./ItemCount";
 
-const Btn = ({ onClick, children }) => (
-  <button
-    className="font-bold text-xl md:text-2xl hover:text-gray-700 dark:hover:text-gray-300 mr-2 md:mr-4 mb-2 md:mb-4"
-    onClick={onClick}
-  >
-    {children}
-  </button>
-);
-
 export default function ItemDetail({ item }) {
+  item = { ...item, review: "Oops, there are no reviews of this product yet." };
   const [toggle, setToggle] = useState("description");
 
-  // id, title, description, price, pictureUrl
+  const Btn = ({ name }) => (
+    <button
+      className={`text-xl md:text-2xl mr-2 md:mr-4 mb-2 md:mb-4 ${
+        toggle === name.toLowerCase()
+          ? "font-bold  text-black dark:text-white"
+          : "opacity-50 hover:opacity-100"
+      }`}
+      onClick={() => setToggle(name.toLowerCase())}
+    >
+      {name}
+    </button>
+  );
+
+  // title, description, price, pictureUrl
   return (
     <div className="max-w-4xl mx-auto p-5 sm:p-0 sm:my-12">
       <div className="flex flex-col sm:flex-row sm:justify-between mb-10 lg:mb-20">
@@ -38,21 +43,13 @@ export default function ItemDetail({ item }) {
       </div>
       <footer>
         <div className="text-xl md:text-2xl">
-          <Btn onClick={() => setToggle("description")}>Description</Btn>
-          <Btn onClick={() => setToggle("review")}>Review</Btn>
+          <Btn name="Description" />
+          <Btn name="Review" />
         </div>
 
-        {toggle === "description" && (
-          <>
-            <p className="max-w-prose">{item.description}</p>
-          </>
-        )}
-
-        {toggle === "review" && (
-          <>
-            <p>Oops!, There are no reviews of this product</p>
-          </>
-        )}
+        <p className="max-w-prose">
+          {toggle === "description" ? item.description : item.review}
+        </p>
       </footer>
     </div>
   );
