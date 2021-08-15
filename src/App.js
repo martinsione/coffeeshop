@@ -1,35 +1,36 @@
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-// import ItemListContainer from "./components/ItemListContainer";
-// import ItemList from "./components/ItemList";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import NotFound from "./components/NotFound";
+
 import useFetchItems from "./hooks/useFetchItems";
 import coffeeList from "./mocks/itemList.json";
 
-import ItemDetailContainer from "./components/ItemDetailContainer";
-
 export default function App() {
-  const coffeItems = useFetchItems(coffeeList);
-  console.log(coffeItems);
+  const fetchedItems = useFetchItems(coffeeList);
 
   return (
-    <>
-      <div className="max-w-7xl mx-auto md:px-8">
+    <BrowserRouter>
+      <div className="max-w-7xl mx-auto md:px8">
         <Navbar />
         <main className="max-w-6xl mx-auto px-4">
-          {/* <ItemListContainer>
-            {coffeItems === "loading" ? (
-              <div className="loading-spinner"></div>
-            ) : (
-              <ItemList items={coffeItems} />
-            )}
-          </ItemListContainer> */}
+          <Switch>
+            <Route exact path="/">
+              <ItemListContainer itemList={fetchedItems} />
+            </Route>
 
-          {coffeItems === "loading" ? (
-            <div className="loading-spinner"></div>
-          ) : (
-            <ItemDetailContainer item={coffeItems[0]} />
-          )}
+            <Route exact path="/item/:id">
+              <ItemDetailContainer item={fetchedItems} />
+            </Route>
+
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
         </main>
       </div>
-    </>
+    </BrowserRouter>
   );
 }
