@@ -1,8 +1,17 @@
-import { NAV_ITEMS } from "../constants/links";
-import CartWidget from "./CartWidget";
-
+import CartWidget from "../components/CartWidget";
 import useColorTheme from "../hooks/useColorTheme";
 import { IoSunny, IoMoon } from "react-icons/io5";
+
+const NAV_ITEMS = [
+  {
+    name: "Shop",
+    href: "/shop",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+];
 
 export default function Navbar() {
   const { theme, switchTheme } = useColorTheme();
