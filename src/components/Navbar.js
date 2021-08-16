@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { IoSunny, IoMoon } from "react-icons/io5";
 import CartWidget from "../components/CartWidget";
-import useColorTheme from "../hooks/useColorTheme";
+import useTheme from "../hooks/useTheme";
 
 const NAV_ITEMS = [
   {
@@ -11,7 +11,7 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
-  const { theme, switchTheme } = useColorTheme();
+  const { theme, toggleTheme } = useTheme();
   return (
     <nav className="sticky top-0 flex justify-between bg-white dark:bg-black p-4 md:my-5">
       <div className="flex justify-center items-center">
@@ -34,7 +34,7 @@ export default function Navbar() {
         <CartWidget />
         <button
           className="rounded text bg-gray-200 dark:bg-gray-800 p-3 ml-4"
-          onClick={switchTheme}
+          onClick={toggleTheme}
         >
           {theme === "dark" ? <IoSunny /> : <IoMoon />}
         </button>
