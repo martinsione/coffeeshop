@@ -5,7 +5,8 @@
     "description": "Red tea, Phu Erh with cranberry, pieces of strawberry, rosehip peel and notes of passion fruit. Pack 60 GRS",
     "price": 630,
     "pictureUrl": "/images/coffee/BERRY-RED-600x400.jpg",
-    "stock": 15
+    "stock": 15,
+    "category": "decaf"
   },
   {
     "id": "e9ef029c-3be4-4c53-ab7e-50f5f51df4bf",
@@ -13,7 +14,8 @@
     "description": "Blend based on black tea leaves with cocoa husks, cinnamon, cardadomo, scent key and vanilla. Pack 60 GRS",
     "price": 630,
     "pictureUrl": "/images/coffee/BLACK-CHAI-COCOA-600x400.jpg",
-    "stock": 3
+    "stock": 3,
+    "category": "decaf"
   },
   {
     "id": "5f402d7b-4a66-4705-a1e2-d24b5211dc62",

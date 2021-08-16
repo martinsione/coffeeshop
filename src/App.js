@@ -13,11 +13,15 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="max-w-7xl mx-auto md:px8">
+      <div className="max-w-7xl mx-auto md:px-8">
         <Navbar />
         <main className="max-w-6xl mx-auto px-4">
           <Switch>
             <Route exact path="/">
+              <ItemListContainer itemList={fetchedItems} />
+            </Route>
+
+            <Route exact path="/category/:id">
               <ItemListContainer itemList={fetchedItems} />
             </Route>
 
