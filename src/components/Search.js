@@ -6,12 +6,6 @@ export default function Search() {
   const [searchValue, setSearchValue] = useState("");
   const history = useHistory();
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit(e);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (searchValue.length > 0) {
@@ -21,7 +15,6 @@ export default function Search() {
 
   return (
     <form
-      onKeyDown={handleKeyDown}
       onSubmit={handleSubmit}
       className="w-full max-w-xl flex justify-between items-center border rounded bg-gray-100 dark:bg-gray-900 mx-4"
     >
@@ -31,7 +24,7 @@ export default function Search() {
         placeholder="Search..."
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <button className="font-bold text-xl p-2">
+      <button className="font-bold text-xl p-2" type="submit">
         <IoSearch />
       </button>
     </form>
