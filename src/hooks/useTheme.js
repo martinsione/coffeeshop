@@ -13,5 +13,5 @@ export default function useTheme() {
 
   const toggleTheme = () => setTheme(colorTheme);
 
-  return { theme, toggleTheme };
+  return { theme, toggleTheme, setTheme };
 }
