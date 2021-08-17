@@ -12,10 +12,10 @@ export default function App() {
   const fetchedItems = useFetchItems(coffeeList);
 
   return (
-    <BrowserRouter>
-      <div className="max-w-7xl mx-auto md:px-8">
+    <div className="max-w-7xl mx-auto px-4">
+      <BrowserRouter>
         <Navbar />
-        <main className="max-w-6xl mx-auto px-4">
+        <main className="md:px-4">
           <Switch>
             <Route exact path="/">
               <ItemListContainer itemList={fetchedItems} />
@@ -34,7 +34,7 @@ export default function App() {
             </Route>
           </Switch>
         </main>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
