@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoChevronDown } from "react-icons/io5";
 const CATEGORIES = [
   {
@@ -35,9 +35,9 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex flex-col rounded bg-gray-100 dark:bg-gray-900 p-5">
+    <div className="flex flex-col rounded bg-gray-100 dark:bg-gray-900 py-3 px-5">
       <div
-        className="flex justify-between items-center font-bold text-xl cursor-pointer"
+        className="flex justify-between items-center font-bold text-xl cursor-pointer py-2"
         onClick={handleClick}
       >
         <h4 className="">Categories</h4>
