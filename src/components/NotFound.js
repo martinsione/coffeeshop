@@ -8,7 +8,7 @@ export default function NotFound({ message }) {
         404 - Page not found
       </h1>
       <h4 className="text-lg md:text-xl mb-12 md:mb-20">
-        {message || `The url: "${currentPath}" was not found.`}
+        {message || `The url ${currentPath} was not found.`}
       </h4>
       <Link
         className="px-20 py-4 md:text-lg rounded font-bold bg-gray-100 dark:bg-gray-900"
