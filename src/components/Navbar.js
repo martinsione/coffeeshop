@@ -13,7 +13,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   return (
-    <nav className="sticky top-0 flex justify-between bg-white dark:bg-black p-4 md:my-5">
+    <nav className="sticky top-0 flex justify-between bg-white dark:bg-black py-4 md:my-5 z-50">
       <div className="flex justify-center items-center">
         <Link to="/">
           <img
