@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function NotFound({ message }) {
   const currentPath = useLocation().pathname;
   return (
-    <div className="flex flex-col justify-center items-center mt-36">
+    <div className="flex flex-col justify-center items-center mt-36 mx-auto">
       <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 md:mb-8">
         404 - Page not found
       </h1>
