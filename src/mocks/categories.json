@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Coffe beans",
+    "children": [
+      {
+        "name": "Decaffeinated coffee",
+        "href": "/category/decaffeinated"
+      },
+      {
+        "name": "Flavored Coffees",
+        "href": "/category/flavored"
+      },
+      {
+        "name": "Classic Grains",
+        "href": "/category/classic-beans"
+      },
+      {
+        "name": "Special Grains",
+        "href": "/category/special-beans"
+      }
+    ]
+  }
+]

@@ -1,29 +1,7 @@
 import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IoChevronDown } from "react-icons/io5";
-const CATEGORIES = [
-  {
-    name: "Coffe beans",
-    children: [
-      {
-        name: "Decaffeinated coffee",
-        href: "/category/decaffeinated",
-      },
-      {
-        name: "Flavored Coffees",
-        href: "/category/flavored",
-      },
-      {
-        name: "Classic Grains",
-        href: "/category/classic",
-      },
-      {
-        name: "Special Grains",
-        href: "/category/special",
-      },
-    ],
-  },
-];
+import CATEGORIES from "../mocks/categories.json";
 
 export default function Sidebar() {
   const [toggle, setToggle] = useState(false);
