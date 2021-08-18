@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import Loader from "./Loader";
 import ItemDetail from "./ItemDetail";
+import Loader from "./Loader";
 import NotFound from "./NotFound";
 
 export default function ItemDetailContainer({ item }) {

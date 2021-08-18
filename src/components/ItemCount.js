@@ -1,5 +1,5 @@
-import useCounter from "../hooks/useCounter";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import useCounter from "../hooks/useCounter";
 
 export default function ItemCount({
   initialValue = 1,

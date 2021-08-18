@@ -1,8 +1,8 @@
-import { useParams, useLocation } from "react-router-dom";
-import Loader from "./Loader";
-import Sidebar from "./Sidebar";
+import { useLocation, useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import Loader from "./Loader";
 import NotFound from "./NotFound";
+import Sidebar from "./Sidebar";
 
 export default function ItemListContainer({ itemList }) {
   const { id } = useParams();

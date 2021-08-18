@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-import Navbar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemListContainer from "./components/ItemListContainer";
+import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
-
 import useFetchItems from "./hooks/useFetchItems";
 import coffeeList from "./mocks/itemList.json";
 

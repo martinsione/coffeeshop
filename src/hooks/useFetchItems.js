@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import fetchData from "../mocks/fetchData";
 
 export default function useFetchItems(data) {

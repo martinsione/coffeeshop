@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import CartWidget from "../components/CartWidget";
-import Search from "./Search";
 import useTheme from "../hooks/useTheme";
+import Search from "./Search";
 
 const NAV_ITEMS = [
   {
