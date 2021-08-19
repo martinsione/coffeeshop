@@ -26,6 +26,7 @@ export default function ItemCount({ initialValue = 1, stock, onAdd }) {
           </button>
           <input
             className="w-full text-center text-base font-semibold dark:bg-black focus:outline-none"
+            type="number"
             readOnly
             value={count}
           />
