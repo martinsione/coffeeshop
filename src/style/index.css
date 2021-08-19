@@ -42,6 +42,16 @@
   }
 }
 
+.btn-primary {
+  @apply rounded border border-black dark:border-white;
+  @apply text-white dark:text-black hover:text-black dark:hover:text-white;
+  @apply bg-black dark:bg-white hover:bg-white dark:hover:bg-black;
+  @apply transition duration-200;
+}
+.btn-primary:disabled {
+  @apply pointer-events-none;
+}
+
 ::selection {
   background-color: #47a3f3;
   color: #fefefe;

@@ -16,7 +16,7 @@ export default function Item({ title, description, price, pictureUrl, onAdd }) {
           {title}
         </p>
         <button
-          className="text-sm self-start font-semibold rounded  border text-white dark:text-black border-black dark:border-white bg-black dark:bg-white hover:text-black dark:hover:text-white hover:bg-white dark:hover:bg-black p-2"
+          className="btn-primary self-start text-sm font-semibold p-2"
           onClick={onAdd}
         >
           Add to cart
