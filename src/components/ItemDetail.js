@@ -1,17 +1,18 @@
 import { useState } from "react";
+import { useCartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ item }) {
   item = { ...item, review: "Oops, there are no reviews of this product yet." };
   const [toggle, setToggle] = useState("description");
-  const handleAdd = (items) => console.log(`${items} added to cart`);
+
+  const cart = useCartContext();
+  const handleAdd = (quantity) => cart.add(item, quantity);
 
   const Btn = ({ name }) => (
     <button
-      className={`text-xl md:text-2xl mr-2 md:mr-4 mb-2 md:mb-4 ${
-        toggle === name.toLowerCase()
-          ? "font-bold"
-          : "opacity-50 hover:opacity-100"
+      className={`text-xl md:text-2xl hover:opacity-100 mr-2 md:mr-4 mb-2 md:mb-4 ${
+        toggle === name.toLowerCase() ? "font-bold" : "opacity-50"
       }`}
       onClick={() => setToggle(name.toLowerCase())}
     >
@@ -52,6 +53,7 @@ export default function ItemDetail({ item }) {
           {toggle === "description" ? item.description : item.review}
         </p>
       </footer>
+      <button onClick={handleAdd}>Add to cart?</button>
     </div>
   );
 }
