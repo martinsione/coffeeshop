@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Cart from "./components/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/Navbar";
@@ -29,6 +30,10 @@ export default function App() {
 
             <Route exact path="/item/:id">
               <ItemDetailContainer item={fetchedItems} />
+            </Route>
+
+            <Route exact path="/cart">
+              <Cart />
             </Route>
 
             <Route path="*">
