@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import CartWidget from "../components/CartWidget";
+import { useCartContext } from "../context/CartContext";
 import useTheme from "../hooks/useTheme";
 import Search from "./Search";
 
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const pathName = useLocation().pathname;
+  const cart = useCartContext();
 
   return (
     <>
@@ -31,9 +33,7 @@ export default function Navbar() {
           </Link>
         </div>
         <Search />
-        <div className="flex justify-center items-center">
-          <CartWidget />
-        </div>
+        {cart.totalItems() > 0 && <CartWidget totalItems={cart.totalItems()} />}
       </nav>
       <div className="flex justify-between items-center px-2">
         <div className="flex items-center">
