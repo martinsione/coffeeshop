@@ -53,7 +53,6 @@ export default function ItemDetail({ item }) {
           {toggle === "description" ? item.description : item.review}
         </p>
       </footer>
-      <button onClick={handleAdd}>Add to cart?</button>
     </div>
   );
 }
