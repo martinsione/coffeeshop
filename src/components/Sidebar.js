@@ -1,7 +1,30 @@
 import { useRef, useState } from "react";
 import { IoChevronDown } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import CATEGORIES from "../mocks/categories.json";
+
+const CATEGORIES = [
+  {
+    name: "Coffe beans",
+    children: [
+      {
+        name: "Decaffeinated coffee",
+        href: "/category/decaffeinated",
+      },
+      {
+        name: "Flavored Coffees",
+        href: "/category/flavored",
+      },
+      {
+        name: "Classic Grains",
+        href: "/category/classic-beans",
+      },
+      {
+        name: "Special Grains",
+        href: "/category/special-beans",
+      },
+    ],
+  },
+];
 
 export default function Sidebar() {
   const [toggle, setToggle] = useState(false);
@@ -18,11 +41,10 @@ export default function Sidebar() {
         className="flex justify-between items-center font-bold text-xl cursor-pointer py-2"
         onClick={handleClick}
       >
-        <h4 className="">Categories</h4>
+        <h4>Categories</h4>
         <button
-          className={`text-2xl transform transition duration-500 ${
-            toggle && "rotate-180"
-          }`}
+          className={`text-2xl transform transition duration-500 
+          ${toggle && "rotate-180"}`}
         >
           <IoChevronDown />
         </button>
