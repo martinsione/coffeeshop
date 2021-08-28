@@ -3,7 +3,6 @@ import { useCartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ item }) {
-  item = { ...item, review: "Oops, there are no reviews of this product yet." };
   const [toggle, setToggle] = useState("description");
 
   const cart = useCartContext();
@@ -11,9 +10,8 @@ export default function ItemDetail({ item }) {
 
   const Btn = ({ name }) => (
     <button
-      className={`text-xl md:text-2xl hover:opacity-100 mr-2 md:mr-4 mb-2 md:mb-4 ${
-        toggle === name.toLowerCase() ? "font-bold" : "opacity-50"
-      }`}
+      className={`text-xl md:text-2xl hover:opacity-100 mr-2 md:mr-4 mb-2 md:mb-4 
+      ${toggle === name.toLowerCase() ? "font-bold" : "opacity-50"}`}
       onClick={() => setToggle(name.toLowerCase())}
     >
       {name}
@@ -50,7 +48,9 @@ export default function ItemDetail({ item }) {
         </div>
 
         <p className="max-w-prose">
-          {toggle === "description" ? item.description : item.review}
+          {toggle === "description"
+            ? item.description
+            : item.review || "Oops, there are no reviews of this product yet."}
         </p>
       </footer>
     </div>
