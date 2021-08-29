@@ -4,7 +4,7 @@ import Loader from "./Loader";
 import NotFound from "./NotFound";
 
 export default function ItemDetailContainer() {
-  let item = useFetchItems("products");
+  const item = useFetchItems("products");
 
   return (
     <>

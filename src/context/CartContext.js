@@ -13,7 +13,7 @@ export const CartProvider = ({ children, initialValue = [] }) => {
     if (index === -1) {
       setCartItems([...cartItems, { item, quantity }]);
     } else {
-      let appendItem = [...cartItems];
+      const appendItem = [...cartItems];
       appendItem[index].quantity += quantity;
       setCartItems(appendItem);
     }
