@@ -17,7 +17,7 @@ const db = getFirestore();
 export const getItems = async (collectionName) => {
   try {
     const querySnapshot = await getDocs(collection(db, collectionName));
-    return querySnapshot.docs.map((doc) => doc.data());
+    return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   } catch (err) {
     console.error(err);
   }
