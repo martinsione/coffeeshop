@@ -1,26 +1,14 @@
-import { useLocation, useParams } from "react-router-dom";
+import useFetchItems from "../hooks/useFetchItems";
 import ItemList from "./ItemList";
 import Loader from "./Loader";
 import NotFound from "./NotFound";
 import Sidebar from "./Sidebar";
 
-export default function ItemListContainer({ itemList }) {
-  const { id } = useParams();
-  const pathName = useLocation().pathname;
-
-  if (id !== undefined && itemList !== "loading") {
-    if (pathName === `/search/${id}`) {
-      itemList = itemList.filter((item) =>
-        item.title.toLowerCase().includes(id.toLowerCase())
-      );
-    }
-    if (pathName === `/category/${id}`) {
-      itemList = itemList.filter((item) => item.category?.includes(id));
-    }
-  }
+export default function ItemListContainer() {
+  const itemList = useFetchItems("products");
 
   return (
-    <div className="">
+    <>
       {itemList === "loading" ? (
         <Loader />
       ) : (
@@ -37,6 +25,6 @@ export default function ItemListContainer({ itemList }) {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 }

@@ -1,14 +1,10 @@
-import { useParams } from "react-router-dom";
+import useFetchItems from "../hooks/useFetchItems";
 import ItemDetail from "./ItemDetail";
 import Loader from "./Loader";
 import NotFound from "./NotFound";
 
-export default function ItemDetailContainer({ item }) {
-  const { id } = useParams();
-
-  if (item !== "loading") {
-    item = item.find((item) => item.id === id);
-  }
+export default function ItemDetailContainer() {
+  let item = useFetchItems("products");
 
   return (
     <>
@@ -17,7 +13,7 @@ export default function ItemDetailContainer({ item }) {
       ) : item ? (
         <ItemDetail item={item} />
       ) : (
-        <NotFound message={`Item "${id}" was not found.`} />
+        <NotFound message={`Item was not found.`} />
       )}
     </>
   );

@@ -1,5 +1,13 @@
 import { getApps, initializeApp } from "firebase/app";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_ClXgrMoOO3dXXE2u8SKJHlgvwreE1No",
@@ -14,10 +22,28 @@ const firebaseConfig = {
 !getApps().length && initializeApp(firebaseConfig);
 const db = getFirestore();
 
-export const getItems = async (collectionName) => {
+export const getItems = async (
+  collectionName,
+  filterBy,
+  filterCondition,
+  filterMatch
+) => {
   try {
-    const querySnapshot = await getDocs(collection(db, collectionName));
+    const itemRef = collection(db, collectionName);
+    const q = filterBy
+      ? query(itemRef, where(filterBy, filterCondition, filterMatch))
+      : query(itemRef);
+    const querySnapshot = await getDocs(q);
     return querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const getItemById = async (collectionName, id) => {
+  try {
+    const docSnap = await getDoc(doc(db, collectionName, id));
+    return { id, ...docSnap.data() };
   } catch (err) {
     console.error(err);
   }

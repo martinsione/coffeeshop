@@ -4,40 +4,25 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
-import useFetchItems from "./hooks/useFetchItems";
 
 export default function App() {
-  const fetchedItems = useFetchItems("products");
-
   return (
     <BrowserRouter>
       <div className="max-w-7xl mx-auto px-4">
         <Navbar />
         <main>
           <Switch>
-            <Route exact path="/">
-              <ItemListContainer itemList={fetchedItems} />
-            </Route>
+            <Route exact path="/" component={ItemListContainer} />
 
-            <Route exact path="/category/:id">
-              <ItemListContainer itemList={fetchedItems} />
-            </Route>
+            <Route exact path="/category/:id" component={ItemListContainer} />
 
-            <Route exact path="/search/:id">
-              <ItemListContainer itemList={fetchedItems} />
-            </Route>
+            <Route exact path="/search/:id" component={ItemListContainer} />
 
-            <Route exact path="/item/:id">
-              <ItemDetailContainer item={fetchedItems} />
-            </Route>
+            <Route exact path="/item/:id" component={ItemDetailContainer} />
 
-            <Route exact path="/cart">
-              <Cart />
-            </Route>
+            <Route exact path="/cart" component={Cart} />
 
-            <Route path="*">
-              <NotFound />
-            </Route>
+            <Route path="*" component={NotFound} />
           </Switch>
         </main>
       </div>
