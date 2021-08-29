@@ -5,10 +5,9 @@ import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 import useFetchItems from "./hooks/useFetchItems";
-import coffeeList from "./mocks/itemList.json";
 
 export default function App() {
-  const fetchedItems = useFetchItems(coffeeList);
+  const fetchedItems = useFetchItems("products");
 
   return (
     <BrowserRouter>
