@@ -6,9 +6,9 @@ export default function Cart() {
   const handleRemove = (id) => cart.remove(id);
 
   return (
-    <div className="mt-10 mx-auto">
+    <div className="max-w-4xl mx-auto">
       {cart.items.length > 0 ? (
-        <div className="px-4">
+        <>
           <div className="flex justify-between tracking-tight text-xl md:text-3xl mb-4">
             <div className="flex items-center">
               <h4 className="font-medium mr-1">Your cart</h4>
@@ -51,7 +51,7 @@ export default function Cart() {
               </button>
             </div>
           ))}
-        </div>
+        </>
       ) : (
         <div className="flex flex-col items-center mt-36 mx-auto">
           <h4 className="font-medium text-2xl md:text-4xl mb-4 md:mb-8">

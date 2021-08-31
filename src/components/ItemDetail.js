@@ -20,7 +20,7 @@ export default function ItemDetail({ item }) {
 
   // title, description, price, pictureUrl
   return (
-    <div className="max-w-4xl mx-auto p-5 sm:p-0 sm:my-12">
+    <div className="max-w-4xl mx-auto">
       <div className="flex flex-col sm:flex-row sm:justify-between mb-10 lg:mb-20">
         <div className="sm:mr-4 md:mr-12 mb-6 sm:mb-0">
           <img

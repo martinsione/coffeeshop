@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import Navbar from "./components/Navbar";
@@ -10,7 +11,7 @@ export default function App() {
     <BrowserRouter>
       <div className="max-w-7xl mx-auto px-4">
         <Navbar />
-        <main>
+        <main className="px-3 mt-2">
           <Switch>
             <Route exact path="/" component={ItemListContainer} />
 
@@ -21,6 +22,8 @@ export default function App() {
             <Route exact path="/item/:id" component={ItemDetailContainer} />
 
             <Route exact path="/cart" component={Cart} />
+
+            <Route exact path="/checkout" component={Checkout} />
 
             <Route path="*" component={NotFound} />
           </Switch>

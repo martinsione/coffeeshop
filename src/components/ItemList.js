@@ -8,7 +8,7 @@ export default function ItemList({ items }) {
     <>
       {items.map((item) => (
         <Link
-          className="sm:w-1/2 lg:w-1/3 p-2"
+          className="sm:w-1/2 lg:w-1/3 my-2 sm:px-2"
           key={item.id}
           to={`/item/${item.id}`}
         >
