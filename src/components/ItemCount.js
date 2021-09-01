@@ -13,7 +13,7 @@ export default function ItemCount({ initialValue = 1, stock, onAdd }) {
     <div className="flex flex-col min-w-0">
       {added ? (
         <Link
-          className="flex justify-center rounded text-white bg-blue-500 w-full p-2"
+          className="flex justify-center rounded text-gray-900 bg-yellow-300 w-full p-2"
           onClick={() => onAdd(count)}
           to="/cart"
         >
@@ -37,9 +37,8 @@ export default function ItemCount({ initialValue = 1, stock, onAdd }) {
       )}
       <button
         disabled={stock < 1 || count < 1}
-        className={`rounded disabled:opacity-50 p-2 mt-1 ${
-          added ? "border opacity-80" : "btn-primary"
-        }`}
+        className={`border rounded disabled:opacity-50 p-2 mt-1  
+        ${added ? " opacity-80" : "btn-primary"}`}
         onClick={toggleAdded}
       >
         {added === true ? "Cancel" : stock < 1 ? "Sold out" : "Add to cart"}
