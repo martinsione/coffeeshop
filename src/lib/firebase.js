@@ -1,11 +1,13 @@
 import { getApps, initializeApp } from "firebase/app";
 import {
+  addDoc,
   collection,
   doc,
   getDoc,
   getDocs,
   getFirestore,
   query,
+  updateDoc,
   where,
 } from "firebase/firestore";
 
@@ -44,6 +46,24 @@ export const getItemById = async (collectionName, id) => {
   try {
     const docSnap = await getDoc(doc(db, collectionName, id));
     return { id, ...docSnap.data() };
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const addDocument = async (collectionName, data) => {
+  try {
+    return await addDoc(collection(db, collectionName), { ...data });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// Used update instead of batchupdate because it it have the same operation
+// cost for firestore and in my opinion is more legible.
+export const updateDocument = async (collectionName, docId, data) => {
+  try {
+    return await updateDoc(doc(db, collectionName, docId), data);
   } catch (err) {
     console.error(err);
   }
