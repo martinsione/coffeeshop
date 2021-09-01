@@ -57,7 +57,7 @@ export default function Checkout() {
 
   return (
     <>
-      {purchaseId ? (
+      {!purchaseId ? (
         <form
           className="flex flex-col w-full max-w-lg rounded shadow-md bg-gray-100 dark:bg-gray-800 p-16 mt-12 mx-auto"
           onSubmit={handleSubmit}
@@ -80,7 +80,7 @@ export default function Checkout() {
             Thanks for your purchase
           </h3>
           <h3 className="text-xl md:text-2xl mb-8 md:mb-16">
-            Purchase id: Bf3tqEFqno7ui8ZTiPbB{purchaseId}
+            Purchase id: {purchaseId}
           </h3>
           <Link
             className="rounded font-bold md:text-lg bg-gray-100 dark:bg-gray-900 py-4 px-20"
