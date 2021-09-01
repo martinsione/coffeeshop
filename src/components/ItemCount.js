@@ -17,7 +17,7 @@ export default function ItemCount({ initialValue = 1, stock, onAdd }) {
           onClick={() => onAdd(count)}
           to="/cart"
         >
-          Finish Purchease
+          Go to cart
         </Link>
       ) : (
         <div className="flex border rounded text-xl py-2 px-4">
