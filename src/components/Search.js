@@ -24,7 +24,11 @@ export default function Search() {
         placeholder="Search..."
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <button className="font-bold text-xl p-2" type="submit">
+      <button
+        aria-label="Search"
+        className="font-bold text-xl p-2"
+        type="submit"
+      >
         <IoSearch />
       </button>
     </form>

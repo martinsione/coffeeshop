@@ -43,6 +43,7 @@ export default function Sidebar() {
       >
         <h4>Categories</h4>
         <button
+          aria-label="Toggle visibility"
           className={`text-2xl transform transition duration-500 
           ${toggle && "rotate-180"}`}
         >
