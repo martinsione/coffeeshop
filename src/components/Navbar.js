@@ -23,14 +23,14 @@ export default function Navbar() {
         <Search />
         <div className="flex">
           <select
-            className="border rounded bg-gray-100 dark:bg-gray-900 focus:outline-none p-2 mr-2"
+            className="border rounded bg-gray-100 dark:bg-gray-900 focus:outline-none p-2 mr-4"
             onChange={(e) => setTheme(e.target.value)}
             value={theme}
           >
             <option value="light">Light</option>
             <option value="dark">Dark</option>
           </select>
-          {totalItems() > 0 && <CartWidget totalItems={totalItems()} />}
+          <CartWidget totalItems={totalItems()} />
         </div>
       </nav>
     </>
