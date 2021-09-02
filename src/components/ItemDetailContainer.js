@@ -10,7 +10,7 @@ export default function ItemDetailContainer() {
     <>
       {item === "loading" ? (
         <Loader />
-      ) : item ? (
+      ) : item.title ? (
         <ItemDetail item={item} />
       ) : (
         <NotFound message={`Item was not found.`} />
