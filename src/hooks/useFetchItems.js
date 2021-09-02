@@ -9,6 +9,7 @@ export default function useFetchItems(collection) {
   const pathName = useLocation().pathname;
 
   const fetchData = async () => {
+    setItems("loading");
     try {
       let res;
       switch (pathName) {
@@ -29,6 +30,7 @@ export default function useFetchItems(collection) {
       }
       return setItems(sortArray(res, "price"));
     } catch (e) {
+      setItems([]);
       console.error(e);
     }
   };
