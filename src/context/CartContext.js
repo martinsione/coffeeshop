@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -6,6 +6,10 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartProvider = ({ children, initialValue = [] }) => {
   const [cartItems, setCartItems] = useState(initialValue);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addItem = (item, quantity) => {
     // index => If ${item} is not in the cart return -1. Else append quantity

@@ -6,7 +6,7 @@ import "./style/index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <CartProvider>
+    <CartProvider initialValue={JSON.parse(localStorage.cart) ?? []}>
       <App />
     </CartProvider>
   </React.StrictMode>,
