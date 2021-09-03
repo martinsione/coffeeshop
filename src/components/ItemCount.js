@@ -1,9 +1,16 @@
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import useCounter from "../hooks/useCounter";
 
 export default function ItemCount({ initialValue = 1, stock, onAdd }) {
   const { count, increment, decrement } = useCounter(initialValue, stock);
+  const history = useHistory();
+
+  const handleAdd = () => onAdd(count);
+  const handleBuyNow = () => {
+    handleAdd();
+    history.push("/cart");
+  };
 
   return (
     <div className="flex flex-col min-w-0">
@@ -25,17 +32,17 @@ export default function ItemCount({ initialValue = 1, stock, onAdd }) {
         <button
           disabled={stock < 1 || count < 1}
           className="btn-primary w-full p-1.5 mr-1"
-          onClick={() => onAdd(count)}
+          onClick={handleAdd}
         >
           Add to cart
         </button>
-        <Link
+        <button
           className="btn-yellow w-full text-center p-1.5 ml-1"
-          onClick={() => onAdd(count)}
-          to="/cart"
+          disabled={stock < 1 || count < 1}
+          onClick={handleBuyNow}
         >
           Buy now
-        </Link>
+        </button>
       </div>
     </div>
   );
