@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 import { addDocument, updateDocument } from "../lib/firebase";
@@ -6,6 +6,7 @@ import { addDocument, updateDocument } from "../lib/firebase";
 export default function Checkout() {
   const { clear, items, totalValue } = useCartContext();
   const [purchaseId, setPurchaseId] = useState(false);
+  const [emailValidated, setEmailValidated] = useState(false);
 
   const useField = (props) => {
     const [value, setValue] = useState("");
@@ -21,8 +22,15 @@ export default function Checkout() {
   };
 
   const name = useField({ type: "text", name: "name", ...inputProps });
-  const email = useField({ type: "email", name: "email", ...inputProps });
+  const email1 = useField({ type: "email", name: "email1", ...inputProps });
+  const email2 = useField({ type: "email", name: "email2", ...inputProps });
   const phone = useField({ type: "number", name: "phone", ...inputProps });
+
+  useEffect(() => {
+    email1.value === email2.value
+      ? setEmailValidated(true)
+      : setEmailValidated(false);
+  }, [email1, email2]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +50,7 @@ export default function Checkout() {
     });
 
     const data = {
-      buyer: { name: name.value, phone: phone.value, email: email.value },
+      buyer: { name: name.value, phone: phone.value, email: email1.value },
       items: mapItemsAndUpdateStock,
       date: new Date(),
       total: totalValue(),
@@ -67,10 +75,19 @@ export default function Checkout() {
           </h4>
 
           <input placeholder="Name" {...name} />
-          <input placeholder="Email" {...email} />
+          <input placeholder="Email" {...email1} />
+          <input placeholder="Re-enter your email" {...email2} />
           <input placeholder="Phone" {...phone} />
 
-          <button className="btn-primary font-medium text-lg md:text-xl p-2 md:p-4 mt-4">
+          <button
+            className="btn-primary font-medium text-lg md:text-xl p-2 md:p-4 mt-4"
+            disabled={
+              !emailValidated ||
+              email1.value.length === 0 ||
+              phone.value.length === 0 ||
+              name.value.length === 0
+            }
+          >
             Purchase
           </button>
         </form>
