@@ -5,20 +5,20 @@ import NotFound from "./NotFound";
 import Sidebar from "./Sidebar";
 
 export default function ItemListContainer() {
-  const itemList = useFetchItems("products");
+  const items = useFetchItems("products");
 
   return (
     <>
-      {itemList === "loading" ? (
+      {items === "loading" ? (
         <Loader />
       ) : (
         <div className="flex flex-wrap">
           <div className="w-full lg:w-1/4 my-2">
             <Sidebar />
           </div>
-          {itemList.length ? (
+          {items.length ? (
             <div className="flex flex-wrap lg:w-3/4">
-              <ItemList items={itemList} />
+              <ItemList items={items} />
             </div>
           ) : (
             <NotFound message="There are no items that matches this category" />

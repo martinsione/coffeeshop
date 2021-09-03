@@ -1,7 +1,7 @@
 export default function Item({ title, description, price, pictureUrl, onAdd }) {
   return (
-    <div className="flex flex-col rounded overflow-hidden border hover:shadow-md dark:hover:border-gray-500 transition duration-200">
-      <figure className="flex overflow-hidden">
+    <div className="flex flex-col rounded overflow-hidden border hover:shadow-md dark:hover:border-gray-100 transition duration-200">
+      <figure className="overflow-hidden">
         <img
           className="transform scale-125"
           src={pictureUrl}
@@ -12,7 +12,7 @@ export default function Item({ title, description, price, pictureUrl, onAdd }) {
         <p className="font-medium text-2xl text-black dark:text-white mb-2">
           ${price.toFixed(2)}
         </p>
-        <p className="tracking-tight text-md text-gray-800 dark:text-gray-300 mb-4">
+        <p className="tracking-tight text-base text-gray-800 dark:text-gray-300 mb-4">
           {title}
         </p>
         <button

@@ -11,7 +11,7 @@ export default function App() {
     <BrowserRouter>
       <div className="max-w-7xl mx-auto px-4">
         <Navbar />
-        <main className="sm:px-3 mt-2">
+        <main className="mt-2 lg:mt-20">
           <Switch>
             <Route exact path="/" component={ItemListContainer} />
 

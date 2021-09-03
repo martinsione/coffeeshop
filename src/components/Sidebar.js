@@ -62,7 +62,7 @@ export default function Sidebar() {
             </h4>
             {category.children.map((categoryChildren) => (
               <Link
-                className="flex flex-col text-gray-700 dark:text-gray-400 hover:opacity-90 ml-2 mb-1"
+                className="flex flex-col text-gray-700 dark:text-gray-400 hover:opacity-90 ml-1 mb-1"
                 key={categoryChildren.name}
                 to={categoryChildren.href}
               >
