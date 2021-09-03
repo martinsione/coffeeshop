@@ -47,8 +47,24 @@
   @apply text-white dark:text-black hover:text-black dark:hover:text-white;
   @apply bg-black dark:bg-white hover:bg-white dark:hover:bg-black;
   @apply transition duration-200;
+  @apply disabled:opacity-50;
 }
 .btn-primary:disabled {
+  @apply pointer-events-none;
+}
+
+.btn-secondary {
+  @apply border rounded text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-white;
+  @apply transition duration-200;
+}
+.btn-secondary:disabled {
+  @apply pointer-events-none;
+}
+
+.btn-yellow {
+  @apply rounded border text-black bg-yellow-300 border-yellow-300 shadow hover:shadow-md hover:opacity-90 disabled:opacity-50;
+}
+.btn-yellow:disabled {
   @apply pointer-events-none;
 }
 
