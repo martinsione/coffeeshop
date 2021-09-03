@@ -2,34 +2,35 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
 
 export default function Cart() {
-  const cart = useCartContext();
-  const handleRemove = (id) => cart.remove(id);
+  const { items, remove, totalValue, totalItems } = useCartContext();
+
+  const handleRemove = (id) => remove(id);
 
   return (
     <>
-      {cart.items.length > 0 ? (
+      {items.length > 0 ? (
         <div className="lg:flex flex-row-reverse">
           <div className="w-full lg:w-1/3">
             <div className="w-full flex flex-col items-center rounded bg-gray-100 dark:bg-gray-900 p-4 mb-4">
               <span className="flex items-center text-xl mb-2">
                 Subtotal
                 <p className="font-medium text-black dark:text-white ml-2">
-                  ${cart.totalValue()}
+                  ${totalValue()}
                 </p>
               </span>
               <Link
-                className="w-full rounded text-center text-gray-900 bg-yellow-300 p-2"
+                className="btn-yellow w-full text-center p-2"
                 to="/checkout"
               >
                 <span className="text-gray-900">Proceed to checkout</span>
                 <span className="text-gray-900 ml-2">
-                  ({cart.totalItems()} items)
+                  ({totalItems()} items)
                 </span>
               </Link>
             </div>
           </div>
           <div className="lg:w-2/3 lg:pr-16">
-            {cart.items.map((arr) => (
+            {items.map((arr) => (
               <div
                 className="flex justify-between mb-2 md:mb-4"
                 key={arr.item.title}
@@ -49,15 +50,15 @@ export default function Cart() {
                     <span className="font-medium text-xl md:text-2xl mb-2 md:mb-8">
                       ${arr.item.price}
                     </span>
-                    <span className="font-medium md:text-lg text-black dark:text-white">
+                    <div className="font-medium md:text-lg text-black dark:text-white">
                       Quantity:
-                      {arr.quantity}
-                    </span>
+                      <span className="ml-1">{arr.quantity}</span>
+                    </div>
                   </div>
                 </div>
 
                 <button
-                  className="btn-primary font-medium self-center py-2 px-4"
+                  className="btn-primary whitespace-nowrap font-medium self-center py-2 px-4"
                   onClick={() => handleRemove(arr.item.id)}
                 >
                   Delete
