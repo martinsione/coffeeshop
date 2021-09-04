@@ -8,19 +8,18 @@ export const CartProvider = ({ children, initialValue = [] }) => {
   const [cartItems, setCartItems] = useState(initialValue);
 
   useEffect(() => {
+    // Only keep items with at least a unit
+    cartItems.forEach((arr) => arr?.quantity < 1 && removeItem(arr.item.id));
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    //eslint-disable-next-line
   }, [cartItems]);
 
   const addItem = (item, quantity) => {
     // index => If ${item} is not in the cart return -1. Else append quantity
     const index = cartItems.findIndex((arr) => arr.item.id === item.id);
-    if (index === -1) {
-      setCartItems([...cartItems, { item, quantity }]);
-    } else {
-      const appendItem = [...cartItems];
-      appendItem[index].quantity += quantity;
-      setCartItems(appendItem);
-    }
+    index === -1
+      ? setCartItems([...cartItems, { item, quantity }])
+      : updateItemQuantity(item.id, quantity, "append");
   };
 
   const clearItems = () => setCartItems([]);
@@ -36,6 +35,15 @@ export const CartProvider = ({ children, initialValue = [] }) => {
   const totalValue = () =>
     cartItems?.reduce((acc, arr) => arr.item.price * arr.quantity + acc, 0);
 
+  const updateItemQuantity = (id, quantity, append) => {
+    const index = cartItems.findIndex((arr) => arr.item.id === id);
+    const appendItem = [...cartItems];
+    append === "append"
+      ? (appendItem[index].quantity += quantity)
+      : (appendItem[index].quantity = quantity);
+    setCartItems(appendItem);
+  };
+
   const cart = {
     add: addItem,
     clear: clearItems,
@@ -44,6 +52,7 @@ export const CartProvider = ({ children, initialValue = [] }) => {
     remove: removeItem,
     totalItems,
     totalValue,
+    updateItemQuantity,
   };
 
   return <CartContext.Provider value={cart}>{children}</CartContext.Provider>;
