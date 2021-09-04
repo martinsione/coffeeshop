@@ -26,7 +26,7 @@ export default function Orders() {
           className="w-full rounded-l bg-white dark:bg-gray-900 focus:outline-none py-2 px-4"
           type="text"
           name="orderId"
-          placeholder="Insert your order ID here:"
+          placeholder="Insert your order ID"
           onChange={(e) => setId(e.target.value)}
         />
         <button
