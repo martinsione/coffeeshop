@@ -51,12 +51,19 @@ export default function Orders() {
           </div>
 
           <div className="mt-8 mb-2">
-            <h4 className="text-xl font-medium">Items</h4>
+            <h4 className="text-xl font-medium">
+              Purchase Detail:
+              <span className="font-normal ml-1">
+                ${order.total} (
+                {order.items.reduce((acc, item) => item.quantity + acc, 0)}{" "}
+                items)
+              </span>
+            </h4>
           </div>
           <ul className="flex flex-col items-center text-lg">
             {order.items.map((item) => (
               <li className="flex font-normal mb-1" key={item.title}>
-                <p className="text-black dark:text-white mr-4">{item.title}</p>
+                <p className="text-black dark:text-white mr-1">{item.title}:</p>
                 <span className="font-medium mr-1">${item.price}</span>
                 <span className="font">
                   ({item.quantity} {item.quantity > 1 ? "Items" : "Item"})
