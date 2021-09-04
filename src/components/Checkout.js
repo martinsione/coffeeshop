@@ -5,7 +5,7 @@ import { addDocument, updateDocument } from "../lib/firebase";
 
 export default function Checkout() {
   const { clear, items, totalValue } = useCartContext();
-  const [purchaseId, setPurchaseId] = useState(false);
+  const [purchaseId, setPurchaseId] = useState();
   const [emailValidated, setEmailValidated] = useState(false);
 
   const useField = (props) => {
@@ -93,12 +93,29 @@ export default function Checkout() {
         </form>
       ) : (
         <div className="flex flex-col items-center mt-36">
-          <h3 className="text-2xl md:text-4xl mb-4 md:mb-8">
+          <h3 className="text-2xl md:text-4xl mb-8 md:mb-12">
             Thanks for your purchase
           </h3>
-          <h3 className="text-xl md:text-2xl mb-8 md:mb-16">
-            Purchase id: {purchaseId}
-          </h3>
+          <div className="text-center mb-8 md:mb-16">
+            <h3 className="text-xl md:text-2xl mb-2 md:mb-4">
+              Purchase id: {purchaseId}
+              <button
+                className="border rounded font-medium text-base md:text-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800 py-1 px-4 ml-2 mt-2 mb-6 sm:my-0"
+                onClick={() => navigator.clipboard.writeText(purchaseId)}
+              >
+                Copy
+              </button>
+            </h3>
+            <p className="text-sm md:text-base">
+              Tip: You can copy your purchease ID and see your order in
+              <Link
+                className="font-medium text-black dark:text-white hover:underline ml-1"
+                to="/orders"
+              >
+                orders page
+              </Link>
+            </p>
+          </div>
           <Link
             className="rounded font-bold md:text-lg bg-gray-100 dark:bg-gray-900 py-4 px-20"
             to="/"
