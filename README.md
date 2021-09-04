@@ -7,7 +7,8 @@
 - Search Fuctionality
 - Persistant Cart
 - Dynamically fetched products from firestore
-- Buyer information saved to firestore
+- Customer information saved to firestore
+- Customers can see their orders by typing the order id.
 
 ## Tech Stack:
 - React
