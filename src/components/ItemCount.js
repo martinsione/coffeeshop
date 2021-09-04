@@ -6,10 +6,14 @@ export default function ItemCount({ initialValue = 1, stock, onAdd }) {
   const { count, increment, decrement } = useCounter(initialValue, stock);
   const history = useHistory();
 
-  const handleAdd = () => onAdd(count);
-  const handleBuyNow = () => {
-    handleAdd();
+  const handleAdd = () => {
+    onAdd(count);
     history.push("/cart");
+  };
+
+  const handleBuyNow = () => {
+    onAdd(count);
+    history.push("/checkout");
   };
 
   return (
