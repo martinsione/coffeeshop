@@ -16,7 +16,7 @@ export default function Search() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-xl flex justify-between items-center border rounded bg-gray-100 dark:bg-gray-900 mx-4"
+      className="w-full flex justify-between items-center border rounded bg-gray-100 dark:bg-gray-900 mx-4"
     >
       <input
         className="w-full bg-gray-100 dark:bg-gray-900 focus:outline-none p-2"
