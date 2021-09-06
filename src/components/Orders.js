@@ -7,6 +7,7 @@ export default function Orders() {
   const [id, setId] = useState("");
   const [order, setOrder] = useState(null);
 
+  console.log(order);
   const handleSubmit = (e) => {
     e.preventDefault();
     setOrder("loading");
@@ -37,41 +38,53 @@ export default function Orders() {
           <IoSearch />
         </button>
       </form>
-      {order === "loading" && <Loader />}
-      {order?.id && (
-        <div className="flex flex-col items-center text-xl mt-8">
-          <div className="font-medium">
-            Email: <span className="font-normal">{order.buyer.email}</span>
-          </div>
-          <div className="font-medium">
-            Phone:
-            <span className="font-normal ml-2">
-              +{order.buyer.phone.replace(/.(?=.{4})/g, "x")}
-            </span>
-          </div>
-
-          <div className="mt-8 mb-2">
-            <h4 className="text-xl font-medium">
-              Purchase Detail:
-              <span className="font-normal ml-1">
-                ${order.total} (
-                {order.items.reduce((acc, item) => item.quantity + acc, 0)}{" "}
-                items)
-              </span>
-            </h4>
-          </div>
-          <ul className="flex flex-col items-center text-lg">
-            {order.items.map((item) => (
-              <li className="flex font-normal mb-1" key={item.title}>
-                <p className="text-black dark:text-white mr-1">{item.title}:</p>
-                <span className="font-medium mr-1">${item.price}</span>
-                <span className="font">
-                  ({item.quantity} {item.quantity > 1 ? "Items" : "Item"})
+      {order !== null && (
+        <>
+          {order === "loading" ? (
+            <Loader />
+          ) : order?.buyer ? (
+            <div className="flex flex-col items-center text-xl mt-8">
+              <div className="font-medium">
+                Email: <span className="font-normal">{order.buyer.email}</span>
+              </div>
+              <div className="font-medium">
+                Phone:
+                <span className="font-normal ml-2">
+                  +{order.buyer.phone.replace(/.(?=.{4})/g, "x")}
                 </span>
-              </li>
-            ))}
-          </ul>
-        </div>
+              </div>
+
+              <div className="mt-8 mb-2">
+                <h4 className="text-xl font-medium">
+                  Purchase Detail:
+                  <span className="font-normal ml-1">
+                    ${order.total} (
+                    {order.items.reduce((acc, item) => item.quantity + acc, 0)}{" "}
+                    items)
+                  </span>
+                </h4>
+              </div>
+              <ul className="flex flex-col items-center text-lg">
+                {order.items.map((item) => (
+                  <li className="flex font-normal mb-1" key={item.title}>
+                    <p className="text-black dark:text-white mr-1">
+                      {item.title}:
+                    </p>
+                    <span className="font-medium mr-1">${item.price}</span>
+                    <span className="font">
+                      ({item.quantity} {item.quantity > 1 ? "Items" : "Item"})
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <h3 className="text-xl text-center mt-4 md:mt-8">
+              Order <span className="font-medium">"{order?.id}"</span> was not
+              found.
+            </h3>
+          )}
+        </>
       )}
     </div>
   );
